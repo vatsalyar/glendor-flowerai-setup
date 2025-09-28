@@ -15,6 +15,7 @@ if [[ "$OS" == "Linux" ]]; then
     sudo add-apt-repository -y ppa:deadsnakes/ppa
     sudo apt update
     sudo apt install -y python3.11 python3.11-venv python3.11-dev
+    sudo snap install tailscale
 elif [[ "$OS" == "Darwin" ]]; then
     echo "🍎 Installing Python 3.11.13 on macOS..."
     if ! command -v brew &> /dev/null; then
@@ -24,6 +25,7 @@ elif [[ "$OS" == "Darwin" ]]; then
     brew install pyenv
     pyenv install -s 3.11.13
     pyenv global 3.11.13
+    brew install tailscale
 else
     echo "❌ Unsupported OS: $OS"
     exit 1
